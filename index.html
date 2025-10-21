@@ -266,6 +266,28 @@
             position: relative;
             z-index: 1;
             animation: scaleIn 1s ease-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-logo {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 20px var(--current-shadow));
+            animation: floatLogo 3s ease-in-out infinite;
+            transition: filter 0.5s;
+        }
+
+        .day-theme .hero-logo {
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+        }
+
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
         }
 
         @keyframes scaleIn {
@@ -751,6 +773,7 @@
         <section class="hero">
             <div class="hero-background"></div>
             <div class="hero-content">
+                <img src="WhatsApp Image 2025-10-15 at 12.06.49 PM.jpeg" alt="TechXtract Logo" class="hero-logo">
                 <h1>TechXtract: Neon Pulse</h1>
                 <p>Empowering Talent Through Technology</p>
                 <a href="#team" class="cta-button" onclick="showPage('team', event)" role="button" aria-label="Navigate to team page to explore our members">Explore Our World</a>
